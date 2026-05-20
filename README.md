@@ -1,22 +1,26 @@
-Image-Based Wafer Map Pattern Intelligence
-Deep Learning for Semiconductor Defect Classification
-Overview
+# Image-Based Wafer Map Pattern Intelligence  
+### Deep Learning for Semiconductor Defect Classification
+
+---
+
+## Overview  
 This project presents an AI-driven approach for analyzing semiconductor wafer maps using deep learning. The system automatically detects and classifies defect patterns such as Edge-Ring, Center, Scratch, Donut, and Random defects, enabling faster fault diagnosis and improved yield prediction.
 
 Traditional inspection methods struggle with complex spatial patterns. This project leverages computer vision and deep learning techniques to improve accuracy and automation.
 
-Key Features
-Automated wafer defect classification
+---
 
-High-performance CNN and transfer learning models
+## Key Features  
+- Automated wafer defect classification  
+- High-performance CNN and transfer learning models  
+- Handles imbalanced real-world datasets  
+- Visual explanations using Grad-CAM  
+- Scalable for industrial applications  
 
-Handles imbalanced real-world datasets
+---
 
-Visual explanations using Grad-CAM
+## System Architecture  
 
-Scalable for industrial applications
-
-System Architecture
 Wafer Map Image
         ↓
 Preprocessing (Resize, Normalize, Augment)
@@ -28,39 +32,34 @@ Feature Extraction
 Classification Layer
         ↓
 Output (Defect Type + Confidence Score)
-Methodology
-Data Collection
-Dataset: WM-811K Wafer Map Dataset
 
-Contains labeled defect patterns
 
-Data Preprocessing
-Image resizing (64×64 or 128×128)
+---
 
-Normalization
+## Methodology  
 
-Data augmentation (rotation, flipping, noise)
+### Data Collection  
+- Dataset: WM-811K Wafer Map Dataset  
+- Contains labeled defect patterns  
 
-Handling class imbalance
+### Data Preprocessing  
+- Image resizing (64×64 or 128×128)  
+- Normalization  
+- Data augmentation (rotation, flipping, noise)  
+- Handling class imbalance  
 
-Model Development
-Custom CNN architecture
+### Model Development  
+- Custom CNN architecture  
+- Transfer learning (ResNet / MobileNet)  
+- Training using cross-entropy loss  
 
-Transfer learning (ResNet / MobileNet)
 
-Training using cross-entropy loss
 
-Evaluation
-Accuracy
+---
 
-F1-score (important for imbalanced datasets)
+## Model Architecture (Example CNN)
 
-Confusion matrix
-
-Visualization
-Grad-CAM heatmaps for interpretability
-
-Model Architecture (Example CNN)
+```python
 class WaferCNN(nn.Module):
     def __init__(self):
         super().__init__()
@@ -77,7 +76,11 @@ class WaferCNN(nn.Module):
             nn.ReLU(),
             nn.Linear(128,9)
         )
-Results
+```
+
+
+##Results
+
 Accurate classification of wafer defect patterns
 
 Effective detection of spatial defect structures
